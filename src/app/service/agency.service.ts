@@ -24,7 +24,9 @@ export class AgencyService {
         provincia: x.provincia,
         direccion: x.direccion,
         index: x.index,
-        star: x.star
+        star: x.star,
+        lat: x.lat,
+        lon: x.lon
       }
     ));
   }

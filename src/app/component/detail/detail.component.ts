@@ -13,10 +13,20 @@ export class DetailComponent implements OnInit {
   @Input() data: IData;
 
   public url: string;
+  public map: string;
   constructor(private service: AgencyService) { }
 
   ngOnInit(): void {
     this.url = environment.imgserver.replace(':id', this.getId());
+    this.map = environment.mapserver.replace(':lat', this.data.lat.toString())
+      .replace(':lon', this.data.lon.toString());
+  }
+  public openMap($event: Event): void {
+    if ($event) {
+      $event.preventDefault();
+      $event.stopImmediatePropagation();
+    }
+    window.open(this.map);
   }
   public onSave($event: Event): void {
     if ($event) {
