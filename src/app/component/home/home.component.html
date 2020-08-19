@@ -1,0 +1,5 @@
+<app-search (output)="data=$event" ></app-search>
+
+<ng-template ngFor let-value [ngForOf]="data">
+  <app-detail [data]="value" ></app-detail>
+</ng-template>
