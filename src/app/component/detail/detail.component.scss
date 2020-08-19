@@ -1,0 +1,20 @@
+@import "src/assets/tools";
+
+app-detail {
+  .container-fluid {
+    padding-bottom: calculateRem($paddings);
+    padding-top: calculateRem($paddings);
+    border-bottom: calculateRem(1px) solid $color-gray-1;
+    &:hover {
+      @include transition(all 0.1s);
+    }
+  }
+
+  .pointer-event {
+    cursor: pointer;
+  }
+  .isStar {
+    color: $color-yellow-1;
+  }
+
+}
