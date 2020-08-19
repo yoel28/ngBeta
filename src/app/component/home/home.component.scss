@@ -1,0 +1,6 @@
+@import "src/assets/tools";
+.btn-plus {
+  position: fixed;
+  bottom: calculateRem(10px);
+  right: calculateRem(10px);
+}
