@@ -3,6 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
+  imgserver: 'https://picsum.photos/id/:id/100/100',
   production: false
 };
 
