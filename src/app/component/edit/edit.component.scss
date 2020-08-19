@@ -1,0 +1,10 @@
+@import "src/assets/tools";
+
+app-edit {
+  .mat-form-field-label {
+    color: $color-blue-1 !important;
+  }
+  .mat-form-field-appearance-legacy .mat-form-field-underline {
+    background-color: $color-blue-1 !important;
+  }
+}
