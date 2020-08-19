@@ -1,0 +1,23 @@
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size !important;
+  font-size: calculateRem($size) !important;
+}
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+$color-yellow-1: yellow;
+$color-gray-1: #e9ecef;
+$color-blue-1: #2323ac;
+$color-white-1: white;
+$paddings: 10px;
