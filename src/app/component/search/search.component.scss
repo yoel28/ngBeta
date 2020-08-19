@@ -1,0 +1,12 @@
+@import "src/assets/tools";
+
+app-search {
+
+  .mat-form-field-appearance-legacy .mat-form-field-underline {
+    background-color: transparent;
+  }
+  .mat-input-element {
+    color: $color-white-1;
+  }
+}
+
