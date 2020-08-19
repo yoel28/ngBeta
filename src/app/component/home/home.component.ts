@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {IData} from '../../type';
+import {AgencyService} from '../../service/agency.service';
 
 @Component({
   selector: 'app-home',
@@ -10,9 +11,12 @@ export class HomeComponent implements OnInit {
 
   public data: IData [] = [];
 
-  constructor() { }
+  constructor(private service: AgencyService) { }
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  public getReady(): boolean {
+    return this.service.isReady;
   }
 
 }

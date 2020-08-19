@@ -10,6 +10,10 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { SearchComponent } from './component/search/search.component';
 import { EditComponent } from './component/edit/edit.component';
 import { HomeComponent } from './component/home/home.component';
+import {HttpClientModule} from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import {InMemoryDataService} from './service/InMemoryDataService';
+
 
 @NgModule({
   declarations: [
@@ -27,7 +31,11 @@ import { HomeComponent } from './component/home/home.component';
     MatIconModule,
     MatCardModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService, { dataEncapsulation: false, delay: 5000 }
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]
