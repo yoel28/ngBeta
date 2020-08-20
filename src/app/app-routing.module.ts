@@ -1,17 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {EditComponent} from './modules/agency/component/edit/edit.component';
-import {HomeComponent} from './modules/agency/component/home/home.component';
+import {AgencyModule} from './modules/agency/agency.module';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/agency', pathMatch: 'full' },
-  { path: 'agency', component: HomeComponent },
-  { path: 'agency/:id', component: EditComponent },
-  { path: '**', redirectTo: '/agency', pathMatch: 'full' },
+  { path: '', loadChildren: () => import('./modules/agency/agency.module')
+      .then(m => m.AgencyModule) },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes), AgencyModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
