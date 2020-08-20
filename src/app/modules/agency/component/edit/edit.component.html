@@ -1,0 +1,35 @@
+<section class="container-fluid">
+  <div class="row header align-content-center">
+    <h1 class="text-white m-auto">Detalles de la agencia</h1>
+  </div>
+  <div class="container">
+    <form class="row" [formGroup]="form" (ngSubmit)="onSubmit($event)">
+      <mat-form-field class="col-12 pt-2" color="accent">
+        <mat-label>Nombre de la agencia</mat-label>
+        <input matInput type="text" formControlName="agencia">
+      </mat-form-field>
+      <mat-form-field class="col-12 pt-2" color="accent">
+        <mat-label>Direcci&oacute;n</mat-label>
+        <input matInput type="text" formControlName="direccion">
+      </mat-form-field>
+      <mat-form-field class="col-12 pt-2" color="accent">
+        <mat-label>Distrito</mat-label>
+        <input matInput type="text" formControlName="distrito">
+      </mat-form-field>
+      <mat-form-field class="col-12 pt-2" color="accent">
+        <mat-label>Latitud</mat-label>
+        <input matInput step="0.00000001" type="number" formControlName="lat">
+      </mat-form-field>
+      <mat-form-field class="col-12 pt-2" color="accent">
+        <mat-label>Longitud</mat-label>
+        <input matInput step="0.00000001" type="number" formControlName="lon">
+      </mat-form-field>
+
+      <div class="col d-flex justify-content-center">
+        <button class="btn btn-primary" [disabled]="!form.valid">Actualizar</button>
+      </div>
+
+    </form>
+  </div>
+
+</section>

@@ -1,7 +1,7 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {AgencyService} from '../../service/agency.service';
-import {IDataDetail} from '../../type';
+import {IData} from '../../utils/type';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
@@ -21,7 +21,7 @@ export class EditComponent implements OnInit {
     );
 
   }
-  public onSubmit($event: Event): void {
+  public onSubmit($event?: Event): void {
     if ($event) {
       $event.preventDefault();
     }
@@ -31,18 +31,18 @@ export class EditComponent implements OnInit {
     this.router.navigate(['/agency']);
   }
 
-  private initForm(data?: IDataDetail) {
+  private initForm(data?: IData) {
     this.form = new FormGroup(
       {
-        agencia: new FormControl(data.agencia || '', Validators.required),
-        provincia: new FormControl(data.provincia || '', Validators.required),
-        departamento: new FormControl(data.departamento || '', Validators.required),
-        direccion: new FormControl(data.direccion || '', Validators.required),
-        distrito: new FormControl(data.distrito || '', Validators.required),
-        index: new FormControl(data.index || 0, Validators.required),
+        agencia: new FormControl(data.agencia, Validators.required),
+        provincia: new FormControl(data.provincia, Validators.required),
+        departamento: new FormControl(data.departamento, Validators.required),
+        direccion: new FormControl(data.direccion, Validators.required),
+        distrito: new FormControl(data.distrito, Validators.required),
+        index: new FormControl(data.index, Validators.required),
         star: new FormControl(data.star || false, Validators.required),
-        lat: new FormControl(data.lat || 0, Validators.required),
-        lon: new FormControl(data.lon || 0, Validators.required)
+        lat: new FormControl(data.lat, Validators.required),
+        lon: new FormControl(data.lon, Validators.required)
       }
     );
   }

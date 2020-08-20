@@ -1,7 +1,8 @@
 import {Component, Input, OnInit, ViewEncapsulation} from '@angular/core';
-import {IData} from '../../type';
-import {environment} from '../../../environments/environment';
+import {IData} from '../../utils/type';
+import {environment} from '../../../../../environments/environment';
 import {AgencyService} from '../../service/agency.service';
+import {AMOUNT_IMG, TOKEN_ID, TOKEN_LAT, TOKEN_LON} from '../../utils/constant';
 
 @Component({
   selector: 'app-detail',
@@ -14,12 +15,13 @@ export class DetailComponent implements OnInit {
 
   public url: string;
   public map: string;
+
   constructor(private service: AgencyService) { }
 
   ngOnInit(): void {
-    this.url = environment.imgserver.replace(':id', this.getId());
-    this.map = environment.mapserver.replace(':lat', this.data.lat.toString())
-      .replace(':lon', this.data.lon.toString());
+    this.url = environment.imgserver.replace(TOKEN_ID, this.getId());
+    this.map = environment.mapserver.replace(TOKEN_LAT, this.data.lat.toString())
+      .replace(TOKEN_LON, this.data.lon.toString());
   }
   public openMap($event: Event): void {
     if ($event) {
@@ -38,7 +40,7 @@ export class DetailComponent implements OnInit {
   }
 
   private getId(): string {
-    return Math.round(Math.random() * 50).toString();
+    return Math.round(Math.random() * AMOUNT_IMG).toString();
   }
 
 }

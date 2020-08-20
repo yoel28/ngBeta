@@ -6,9 +6,6 @@ export interface IData {
   lon: number;
   index?: number;
   star?: boolean;
-}
-export interface IDataDetail extends IData {
   distrito: string;
   departamento: string;
-
 }

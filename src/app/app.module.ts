@@ -4,15 +4,15 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { DetailComponent } from './component/detail/detail.component';
+import { DetailComponent } from './modules/agency/component/detail/detail.component';
 import {MatCardModule, MatIconModule, MatInputModule} from '@angular/material';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { SearchComponent } from './component/search/search.component';
-import { EditComponent } from './component/edit/edit.component';
-import { HomeComponent } from './component/home/home.component';
+import { SearchComponent } from './modules/agency/component/search/search.component';
+import { EditComponent } from './modules/agency/component/edit/edit.component';
+import { HomeComponent } from './modules/agency/component/home/home.component';
 import {HttpClientModule} from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import {InMemoryDataService} from './service/InMemoryDataService';
+import {InMemoryDataService} from './modules/agency/service/InMemoryDataService';
 
 
 @NgModule({

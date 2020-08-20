@@ -1,10 +1,6 @@
 <ng-template [ngIf]="getReady()">
   <app-search (output)="data=$event" ></app-search>
-
-
   <button class="rounded-circle btn-plus btn btn-danger font-weight-bold text-white">+</button>
-
-
   <ng-template ngFor let-value [ngForOf]="data">
     <app-detail [data]="value" ></app-detail>
   </ng-template>

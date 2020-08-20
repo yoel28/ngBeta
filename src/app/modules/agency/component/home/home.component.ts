@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {IData} from '../../type';
+import {IData} from '../../utils/type';
 import {AgencyService} from '../../service/agency.service';
 
 @Component({
